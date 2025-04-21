@@ -1,0 +1,100 @@
+.type {
+    font-weight: bold;
+    padding: 4px 8px;
+    border-radius: 4px;
+    text-transform: capitalize;
+    display: inline-block;
+    font-size: 0.875rem;
+    margin: 2px;
+}
+
+/* Tipos Pokémon com cores */
+.type_normal {
+    background-color: #A8A77A;
+    color: white;
+}
+
+.type_fire {
+    background-color: #EE8130;
+    color: white;
+}
+
+.type_water {
+    background-color: #6390F0;
+    color: white;
+}
+
+.type_electric {
+    background-color: #F7D02C;
+    color: black;
+}
+
+.type_grass {
+    background-color: #7AC74C;
+    color: white;
+}
+
+.type_ice {
+    background-color: #96D9D6;
+    color: black;
+}
+
+.type_fighting {
+    background-color: #C22E28;
+    color: white;
+}
+
+.type_poison {
+    background-color: #A33EA1;
+    color: white;
+}
+
+.type_ground {
+    background-color: #E2BF65;
+    color: black;
+}
+
+.type_flying {
+    background-color: #A98FF3;
+    color: white;
+}
+
+.type_psychic {
+    background-color: #F95587;
+    color: white;
+}
+
+.type_bug {
+    background-color: #A6B91A;
+    color: white;
+}
+
+.type_rock {
+    background-color: #B6A136;
+    color: white;
+}
+
+.type_ghost {
+    background-color: #735797;
+    color: white;
+}
+
+.type_dragon {
+    background-color: #6F35FC;
+    color: white;
+}
+
+.type_dark {
+    background-color: #705746;
+    color: white;
+}
+
+.type_steel {
+    background-color: #B7B7CE;
+    color: black;
+}
+
+.type_fairy {
+    background-color: #D685AD;
+    color: white;
+}
