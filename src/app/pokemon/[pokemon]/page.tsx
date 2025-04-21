@@ -1,10 +1,9 @@
 import Image from "next/image";
 import styles from './styles.module.css';
 
-type PokemonProps = {
-    params: {
-        pokemon: string;
-    };
+type PokemonResult = {
+    name: string;
+    url: string;
 };
 
 export async function generateStaticParams() {
@@ -14,13 +13,21 @@ export async function generateStaticParams() {
     const res = await fetch(`${api}/?limit=${maxPokemons}`);
     const data = await res.json();
 
-    return data.results.map((_: any, index: number) => ({
+    return data.results.map((_: PokemonResult, index: number) => ({
         pokemon: (index + 1).toString(),
     }));
 }
 
-export default async function PokemonPage({ params }: PokemonProps) {
-    const { pokemon } = params;
+// ✅ CORREÇÃO: Tipagem com Promise e uso de await
+type Props = {
+    params: Promise<{
+        pokemon: string;
+    }>;
+};
+
+export default async function PokemonPage({ params }: Props) {
+    const { pokemon } = await params;
+
     const res = await fetch(`https://pokeapi.co/api/v2/pokemon/${pokemon}`);
     const data = await res.json();
 
@@ -43,7 +50,9 @@ export default async function PokemonPage({ params }: PokemonProps) {
                     <span
                         key={index}
                         className={`${styles.type} ${styles['type_' + item.type.name]}`}
-                    >{item.type.name}</span>
+                    >
+                        {item.type.name}
+                    </span>
                 ))}
             </div>
             <div className="flex">

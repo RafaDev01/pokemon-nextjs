@@ -21,7 +21,6 @@ async function getPokemons(): Promise<Pokemon[]> {
       id: index + 1,
     })
   );
-  console.log(pokemons);
   return pokemons;
 }
 
